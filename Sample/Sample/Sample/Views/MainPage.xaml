@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sample.MainPage">
+
+    <!-- 行3列2のマトリクス -->
+    <Grid>
+
+        <!-- 数字が固定長、Autoが必要最低、*があまり全部 -->
+        <!-- ここでは列2個-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- 数字が固定長、Autoが必要最低、*があまり全部 -->
+        <!-- ここでは行3個-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Grid.Column、Grid.Rowで座標指定 座標指定だから順番は自由-->
+        <StackLayout Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text=" " />
+        </StackLayout>
+        
+        <Button Grid.ColumnSpan="2" Grid.Row="1" Text="URIを開く:DependencyService" Command="{Binding DependencyServiceCommand}"/>
+        
+        <Entry Grid.ColumnSpan="2" Grid.Row="2" Placeholder="URLを入力してください" Text="{Binding URIText}" />
+
+    </Grid>
+</ContentPage>
