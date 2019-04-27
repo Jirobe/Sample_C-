@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sample.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,6 +8,10 @@ namespace Sample
 {
     public partial class App : Application
     {
+        public static Action OnStartAction;
+        public static Action OnSleepAction;
+        public static Action OnResumeAction;
+
         public App()
         {
             InitializeComponent();
@@ -16,17 +21,17 @@ namespace Sample
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            OnStartAction?.Invoke();
         }
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            OnSleepAction?.Invoke();
         }
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
+            OnResumeAction?.Invoke();
         }
     }
 }

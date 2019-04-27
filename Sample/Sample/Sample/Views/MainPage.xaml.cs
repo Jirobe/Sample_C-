@@ -1,7 +1,7 @@
 ﻿using Sample.ViewModels;
 using Xamarin.Forms;
 
-namespace Sample
+namespace Sample.Views
 {
     public partial class MainPage : ContentPage
     {
@@ -13,15 +13,24 @@ namespace Sample
             BindingContext = new MainPageViewModel();
         }
 
-        //private void Button_Clicked(object sender, EventArgs e)
-        //{
-        //    Device.OpenUri(new Uri(@"https://www.google.com/"));
-        //}
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
 
-        //private void Button_Clicked_1(object sender, EventArgs e)
-        //{
-        //    var openUriService = DependencyService.Get<IOpenUriService>();
-        //    openUriService.OpenUri(@"https://www.google.com/");
-        //}
+            //イベントのセット
+            MessagingCenter.Subscribe<MainPageViewModel>(this, "MovePage1",
+                async (_) =>
+                {
+                    await Navigation.PushModalAsync(new Page1(), true);
+                });
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            //イベントの破棄
+            MessagingCenter.Unsubscribe<MainPageViewModel>(this, "MovePage1");
+        }
     }
 }
