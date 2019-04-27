@@ -23,6 +23,9 @@ namespace Sample.Views
                 {
                     await Navigation.PushModalAsync(new Page1(), true);
                 });
+
+            //OnResume()
+            App.OnResumeAction = () => DisplayAlert("メッセージ", "OnResume()", "OK");
         }
 
         protected override void OnDisappearing()
@@ -31,6 +34,8 @@ namespace Sample.Views
 
             //イベントの破棄
             MessagingCenter.Unsubscribe<MainPageViewModel>(this, "MovePage1");
+
+            App.OnResumeAction = null;
         }
     }
 }
