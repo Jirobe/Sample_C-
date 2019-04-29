@@ -1,6 +1,5 @@
 ﻿
 using Sample.ViewModels;
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,6 +8,7 @@ namespace Sample.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page1 : ContentPage
     {
+
         public Page1()
         {
             InitializeComponent();
@@ -32,20 +32,20 @@ namespace Sample.Views
 
             //タプルにして複数の個の値を渡す
             MessagingCenter.Subscribe<Page1ViewModel, (string, string)>(this, "ShowMessage",
-            (_, t) =>
-            {
-                //メッセージダイアログ
-                DisplayAlert(t.Item1, t.Item2, "OK");
-            });
+                (_, t) =>
+                {
+                    //メッセージダイアログ
+                    DisplayAlert(t.Item1, t.Item2, "OK");
+                });
         }
-        
+
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
 
             //イベントの破棄
             MessagingCenter.Unsubscribe<Page1ViewModel>(this, "Back");
-            MessagingCenter.Unsubscribe<Page1ViewModel>(this, "ShowMessage");
+            MessagingCenter.Unsubscribe<Page1ViewModel, (string, string)>(this, "ShowMessage");
         }
     }
 }
