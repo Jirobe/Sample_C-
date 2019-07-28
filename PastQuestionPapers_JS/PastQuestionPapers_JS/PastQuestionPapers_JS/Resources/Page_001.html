@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <script>
+
+
+      function addAsync() {
+          
+          MyCalc.onResult = function (res) {
+
+              var x = 1;
+              var y = 2;
+
+              var label1 = document.getElementById("result1");
+              label1.innerHTML = ①;
+
+              var label2 = document.getElementById("result2");
+              label2.innerHTML = "NG";
+              if (label1.innerHTML == 3) {
+                  label2.innerHTML = "OK";
+              }
+          };
+
+          MyCalc.heavyAdd(98);
+      }
+
+      ⓴
+  </script>
+</head>
+<body>
+    <hr>
+    実行結果<br/>
+    <label id="result1"></label><br />
+    <hr>
+    <label id="result2"></label><br />
+</body>
+</html>
