@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:minWidth="25px"
+	android:minHeight="25px">
+	<Toolbar
+		android:minHeight="?android:attr/actionBarSize"
+		android:background="?android:attr/colorPrimary"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/toolbar1">
+		<Button
+			android:text="前"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/btnPrev" />
+		<Button
+			android:text="次"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/btnNext" />
+		<Button
+			android:text="現在"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/btnCurrent" />
+		<Button
+			android:text="設定"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/btnSetting" />
+	</Toolbar>
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginLeft="20px"
+		android:layout_marginRight="20px"
+		android:minWidth="25px"
+		android:minHeight="25px">
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout1">
+			<TextView
+				android:text="目標"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="200px"
+				android:layout_height="match_parent"
+				android:id="@+id/TextView" />
+			<TextView
+				android:text="0"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@+id/tvMokuhyo" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout2">
+			<TextView
+				android:text="合計"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="200px"
+				android:layout_height="match_parent"
+				android:id="@+id/TextView" />
+			<TextView
+				android:text="0"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@+id/tvWeekTotal" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout4">
+			<TextView
+				android:text="差分"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="200px"
+				android:layout_height="match_parent"
+				android:id="@+id/textView8" />
+			<TextView
+				android:text="0"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@+id/tvDiff" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout5">
+			<TextView
+				android:text="0001/01/01"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:gravity="center"
+				android:layout_marginRight="25px"
+				android:id="@+id/tvDay1" />
+			<TextView
+				android:text="月"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="100px"
+				android:layout_height="match_parent"
+				android:gravity="center_vertical"
+				android:layout_marginRight="25px"
+				android:id="@+id/textView12" />
+			<EditText
+				android:inputType="number"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/editText1" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout6">
+			<TextView
+				android:text="0001/01/02"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:gravity="center"
+				android:layout_marginRight="25px"
+				android:id="@+id/tvDay2" />
+			<TextView
+				android:text="火"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="100px"
+				android:layout_height="match_parent"
+				android:gravity="center_vertical"
+				android:layout_marginRight="25px"
+				android:id="@+id/textView13" />
+			<EditText
+				android:inputType="number"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/editText2" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout7">
+			<TextView
+				android:text="0001/01/03"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:gravity="center"
+				android:layout_marginRight="25px"
+				android:id="@+id/tvDay3" />
+			<TextView
+				android:text="水"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="100px"
+				android:layout_height="match_parent"
+				android:gravity="center_vertical"
+				android:layout_marginRight="25px"
+				android:id="@+id/textView15" />
+			<EditText
+				android:inputType="number"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/editText3" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout8">
+			<TextView
+				android:text="0001/01/04"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:gravity="center"
+				android:layout_marginRight="25px"
+				android:id="@+id/tvDay4" />
+			<TextView
+				android:text="木"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="100px"
+				android:layout_height="match_parent"
+				android:gravity="center_vertical"
+				android:layout_marginRight="25px"
+				android:id="@+id/textView17" />
+			<EditText
+				android:inputType="number"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/editText4" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout9">
+			<TextView
+				android:text="0001/01/05"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:gravity="center"
+				android:layout_marginRight="25px"
+				android:id="@+id/tvDay5" />
+			<TextView
+				android:text="金"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="100px"
+				android:layout_height="match_parent"
+				android:gravity="center_vertical"
+				android:layout_marginRight="25px"
+				android:id="@+id/textView19" />
+			<EditText
+				android:inputType="number"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/editText5" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout10">
+			<TextView
+				android:text="0001/01/06"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:gravity="center"
+				android:layout_marginRight="25px"
+				android:id="@+id/tvDay6" />
+			<TextView
+				android:text="土"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="100px"
+				android:layout_height="match_parent"
+				android:gravity="center_vertical"
+				android:layout_marginRight="25px"
+				android:id="@+id/textView21" />
+			<EditText
+				android:inputType="number"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/editText6" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout11">
+			<TextView
+				android:text="0001/01/07"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:gravity="center"
+				android:layout_marginRight="25px"
+				android:id="@+id/tvDay7" />
+			<TextView
+				android:text="日"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="100px"
+				android:layout_height="match_parent"
+				android:gravity="center_vertical"
+				android:layout_marginRight="25px"
+				android:id="@+id/textView23" />
+			<EditText
+				android:inputType="number"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/editText7" />
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
