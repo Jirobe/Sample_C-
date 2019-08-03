@@ -223,7 +223,7 @@ namespace Syokuhi
         void btnSetting_Click(object sender, System.EventArgs e)
         {
             var intent = new Intent(this, typeof(Setting));
-            intent.PutExtra("mokuhyo", mokuhyo);
+            intent.PutExtra("mokuhyo", defMokuhyo);
             StartActivityForResult(intent, 1);
         }
 
