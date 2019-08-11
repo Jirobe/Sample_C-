@@ -31,13 +31,13 @@ namespace Syokuhi
             FindViewById<Button>(Resource.Id.btnNext).Click += btnNext_Click;
             FindViewById<Button>(Resource.Id.btnCurrent).Click += btnCurrent_Click;
             FindViewById<Button>(Resource.Id.btnSetting).Click += btnSetting_Click;
-            FindViewById<EditText>(Resource.Id.editText1).FocusChange += editText_Change;
-            FindViewById<EditText>(Resource.Id.editText2).FocusChange += editText_Change;
-            FindViewById<EditText>(Resource.Id.editText3).FocusChange += editText_Change;
-            FindViewById<EditText>(Resource.Id.editText4).FocusChange += editText_Change;
-            FindViewById<EditText>(Resource.Id.editText5).FocusChange += editText_Change;
-            FindViewById<EditText>(Resource.Id.editText6).FocusChange += editText_Change;
-            FindViewById<EditText>(Resource.Id.editText7).FocusChange += editText_Change;
+            FindViewById<EditText>(Resource.Id.editText1).TextChanged += editText_Change;
+            FindViewById<EditText>(Resource.Id.editText2).TextChanged += editText_Change;
+            FindViewById<EditText>(Resource.Id.editText3).TextChanged += editText_Change;
+            FindViewById<EditText>(Resource.Id.editText4).TextChanged += editText_Change;
+            FindViewById<EditText>(Resource.Id.editText5).TextChanged += editText_Change;
+            FindViewById<EditText>(Resource.Id.editText6).TextChanged += editText_Change;
+            FindViewById<EditText>(Resource.Id.editText7).TextChanged += editText_Change;
 
             display();
         }
@@ -49,7 +49,7 @@ namespace Syokuhi
             if (start == null)
             {
                 DateTime dtToday = DateTime.Today;
-                start = dtToday.AddDays(dtToday.DayOfWeek == DayOfWeek.Sunday ? 6 : 1 - (int)dtToday.DayOfWeek);
+                start = dtToday.AddDays(dtToday.DayOfWeek == DayOfWeek.Sunday ? -6 : 1 - (int)dtToday.DayOfWeek);
             }
 
             DateTime dtTarget = (DateTime)start;
