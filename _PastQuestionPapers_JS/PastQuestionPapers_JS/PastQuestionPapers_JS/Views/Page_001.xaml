@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PastQuestionPapers_JavaScript.Views.Page_001"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+
+                <Label 
+                            Grid.Row="1"
+                            Text="{Binding Question}"
+                            TextColor="White"
+                        />
+
+                <Label 
+                            Grid.Row="2"
+                            Text="{Binding Text}"
+                        TextColor="White"
+                        />
+
+                <Button 
+                            Grid.Row="3"
+                            Text="{Binding Execute}"
+                             Command="{Binding ExecuteCommand}"
+                            BackgroundColor="Red"
+                            TextColor="White"
+                        />
+                <Editor 
+                            Grid.Row="4"
+                            Text="{Binding Answer}"
+                             HeightRequest="500"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                        />
+
+                <Frame Grid.RowSpan="5" IsVisible="{Binding IsVisibleResult}">
+                    <StackLayout>
+                <WebView 
+                            Source="{Binding Result}"
+                        HeightRequest="500"
+                            BackgroundColor="White"
+                        />
+                    <Button Command="{Binding CloseCommand}" Text="Close"/>
+                        </StackLayout>
+                </Frame>
+
+
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

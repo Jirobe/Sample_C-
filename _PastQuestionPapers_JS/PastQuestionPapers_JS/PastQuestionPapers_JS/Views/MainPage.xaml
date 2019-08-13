@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PastQuestionPapers_JavaScript.Views"
+             xmlns:ViewModels="clr-namespace:PastQuestionPapers_JavaScript.ViewModels"
+             x:Class="PastQuestionPapers_JavaScript.Views.MainPage">
+
+    <StackLayout>
+        <Label 
+        Grid.Row="0"
+        Text="{Binding List1_Title}"
+         />
+
+        <ListView ItemsSource="{Binding Items}" SeparatorColor="Green">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Button 
+                            Grid.Row="0"
+                            Text="{Binding Number}"
+                             Command="{Binding StartCommand}"
+                        />
+                            <Label 
+                            Grid.Row="1"
+                            Text="{Binding Title}"
+                        />
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </StackLayout>
+
+</ContentPage>

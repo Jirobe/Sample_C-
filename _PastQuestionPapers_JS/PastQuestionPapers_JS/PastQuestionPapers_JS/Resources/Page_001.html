@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <script>
+
+
+      function addAsync() {
+          
+          MyCalc.onResult = function (res) {
+
+              ①
+          };
+
+          MyCalc.heavyAdd(98);
+      }
+
+      addAsync();
+  </script>
+</head>
+<body>
+    <hr>
+    <br/>
+    <label id="result1"></label><br />
+    <hr>
+    <label id="result2"></label><br />
+</body>
+</html>
