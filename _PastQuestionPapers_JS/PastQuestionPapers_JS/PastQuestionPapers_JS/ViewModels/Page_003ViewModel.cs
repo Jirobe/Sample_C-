@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace PastQuestionPapers_JavaScript.ViewModels
 {
-    class Page_001ViewModel : BaseViewModel
+    class Page_003ViewModel : BaseViewModel
     {
 
         private string question;
@@ -65,7 +65,6 @@ namespace PastQuestionPapers_JavaScript.ViewModels
             sr.Close();
             
             s = s.Replace("①", Answer);
-            s = s.Replace("②", "");
             var htmlSource = new HtmlWebViewSource();
             htmlSource.Html = s;
             Result = htmlSource;
@@ -73,7 +72,7 @@ namespace PastQuestionPapers_JavaScript.ViewModels
 
         public ICommand CloseCommand => new Command(() => IsVisibleResult = false);
 
-        public Page_001ViewModel()
+        public Page_003ViewModel()
         {
             Execute = "実行";
 

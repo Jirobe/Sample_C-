@@ -21,6 +21,16 @@ namespace PastQuestionPapers_JavaScript.Views
                 {
                     await Navigation.PushModalAsync(new Page_001(), true);
                 });
+            MessagingCenter.Subscribe<MainPageItem>(this, "Page_002",
+                async (_) =>
+                {
+                    await Navigation.PushModalAsync(new Page_002(), true);
+                });
+            MessagingCenter.Subscribe<MainPageItem>(this, "Page_003",
+                async (_) =>
+                {
+                    await Navigation.PushModalAsync(new Page_003(), true);
+                });
         }
 
         protected override void OnDisappearing()
@@ -29,6 +39,8 @@ namespace PastQuestionPapers_JavaScript.Views
 
             //イベントの破棄
             MessagingCenter.Unsubscribe<MainPageItem>(this, "Page_001");
+            MessagingCenter.Unsubscribe<MainPageItem>(this, "Page_002");
+            MessagingCenter.Unsubscribe<MainPageItem>(this, "Page_003");
         }
     }
 }

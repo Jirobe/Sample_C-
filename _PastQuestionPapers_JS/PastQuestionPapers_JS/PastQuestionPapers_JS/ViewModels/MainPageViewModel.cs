@@ -24,10 +24,8 @@ namespace PastQuestionPapers_JavaScript.ViewModels
             Items = new ObservableCollection<MainPageItem>()
             {
                  new MainPageItem(){ Number="001_自由", Title="" , NextPageMessage="Page_001"},
-                 new MainPageItem(){ Number="002_", Title="" , NextPageMessage="Page_002"},
+                 new MainPageItem(){ Number="002_Fizz Buzz", Title="" , NextPageMessage="Page_002"},
                  new MainPageItem(){ Number="003_", Title="" , NextPageMessage="Page_003"},
-                 new MainPageItem(){ Number="004_", Title="" , NextPageMessage="Page_004"},
-                 new MainPageItem(){ Number="005_", Title="" , NextPageMessage="Page_005"},
             };
         }
     }

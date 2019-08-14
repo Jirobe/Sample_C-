@@ -3,11 +3,12 @@ using Xamarin.Forms;
 
 namespace PastQuestionPapers_JavaScript.ViewModels
 {
-    class Page_001ViewModel : BaseViewModel
+    class Page_002ViewModel : BaseViewModel
     {
 
         private string question;
         private string text;
+        private string timer;
         private string answer;
         private string execute;
         private HtmlWebViewSource result;
@@ -22,6 +23,12 @@ namespace PastQuestionPapers_JavaScript.ViewModels
         {
             get { return text; }
             set { SetProperty(ref text, value); }
+        }
+        
+        public string Timer
+        {
+            get { return timer; }
+            set { SetProperty(ref timer, value); }
         }
         public string Answer
         {
@@ -45,7 +52,7 @@ namespace PastQuestionPapers_JavaScript.ViewModels
         }
 
 
-        
+
 
         public ICommand ExecuteCommand => new Command(() =>
         {
@@ -63,9 +70,21 @@ namespace PastQuestionPapers_JavaScript.ViewModels
             string s = sr.ReadToEnd();
             //後始末
             sr.Close();
-            
-            s = s.Replace("①", Answer);
-            s = s.Replace("②", "");
+
+            s = s.Replace("①",
+$@"
+result1.innerHTML = 'fizzBuzz(3) = ' + fizzBuzz(3);   
+result2.innerHTML = 'fizzBuzz(25) = ' + fizzBuzz(25); 
+result3.innerHTML = 'fizzBuzz(135) = ' + fizzBuzz(135); 
+result4.innerHTML = 'fizzBuzz(98) = ' + fizzBuzz(98); 
+
+result5.innerHTML = 'NG'; 
+
+if (fizzBuzz(3) == 'Fizz') if (fizzBuzz(25) == 'Buzz') if (fizzBuzz(135) == 'FizzBuzz') if (fizzBuzz(98) == '98')
+result5.innerHTML = 'OK'; 
+"
+                );
+            s = s.Replace("②", Answer);
             var htmlSource = new HtmlWebViewSource();
             htmlSource.Html = s;
             Result = htmlSource;
@@ -73,18 +92,24 @@ namespace PastQuestionPapers_JavaScript.ViewModels
 
         public ICommand CloseCommand => new Command(() => IsVisibleResult = false);
 
-        public Page_001ViewModel()
+        public Page_002ViewModel()
         {
             Execute = "実行";
 
             Text = $@"
-自由
+Fizz Buzz
+
+function fizzBuzz(number)の実装を行ってください。
+
+・引数は整数です。
+・引数が3で割り切れる場合は「Fizz」を返却してください。
+・引数が5で割り切れる場合は「Buzz」を返却してください
+・引数が3と5で割り切れる場合は「FizzBuzz」を返却してください。
+・引数がいずれにも当てはまらない場合は引数を返却してください。
 ";
             Answer = $@"
-let x = 1;
-let y = 2;
-alert('x + y = ' + (x + y));
-";
+function fizzBuzz(number) 
+" + "{\r\n\r\n\r\n}";
 
             IsVisibleResult = false;
 
