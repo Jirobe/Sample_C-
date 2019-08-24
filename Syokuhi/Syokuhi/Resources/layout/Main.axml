@@ -13,17 +13,17 @@
 		android:layout_height="match_parent"
 		android:id="@+id/toolbar1">
 		<Button
-			android:text="前"
+			android:text="前週"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/btnPrev" />
 		<Button
-			android:text="次"
+			android:text="次週"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/btnNext" />
 		<Button
-			android:text="現在"
+			android:text="今週"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/btnCurrent" />
@@ -129,6 +129,7 @@
 				android:inputType="number"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
+				android:maxLength="15"
 				android:id="@+id/editText1" />
 		</LinearLayout>
 		<LinearLayout
@@ -158,6 +159,7 @@
 				android:inputType="number"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
+				android:maxLength="15"
 				android:id="@+id/editText2" />
 		</LinearLayout>
 		<LinearLayout
@@ -187,6 +189,7 @@
 				android:inputType="number"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
+				android:maxLength="15"
 				android:id="@+id/editText3" />
 		</LinearLayout>
 		<LinearLayout
@@ -216,6 +219,7 @@
 				android:inputType="number"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
+				android:maxLength="15"
 				android:id="@+id/editText4" />
 		</LinearLayout>
 		<LinearLayout
@@ -245,6 +249,7 @@
 				android:inputType="number"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
+				android:maxLength="15"
 				android:id="@+id/editText5" />
 		</LinearLayout>
 		<LinearLayout
@@ -274,6 +279,7 @@
 				android:inputType="number"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
+				android:maxLength="15"
 				android:id="@+id/editText6" />
 		</LinearLayout>
 		<LinearLayout
@@ -303,6 +309,7 @@
 				android:inputType="number"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
+				android:maxLength="15"
 				android:id="@+id/editText7" />
 		</LinearLayout>
 	</LinearLayout>

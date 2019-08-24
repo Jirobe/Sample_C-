@@ -16,17 +16,17 @@ namespace Syokuhi
             SetContentView(Resource.Layout.Setting);
 
             etMokuhyo = FindViewById<EditText>(Resource.Id.etMokuhyo);
-            etMokuhyo.Text = Intent.GetIntExtra("mokuhyo", 0).ToString();
+            etMokuhyo.Text = Intent.GetDoubleExtra("mokuhyo", 0).ToString();
         }
 
         public override void OnBackPressed()
         {
             var intent = new Intent();
 
-            int iMokuhyo = 0;
+            double iMokuhyo = 0;
             if (!etMokuhyo.Text.Equals(string.Empty))
             {
-                iMokuhyo = int.Parse(etMokuhyo.Text);
+                iMokuhyo = double.Parse(etMokuhyo.Text);
             }
 
             intent.PutExtra("mokuhyo", iMokuhyo);

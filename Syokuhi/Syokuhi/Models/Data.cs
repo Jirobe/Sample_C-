@@ -33,8 +33,8 @@ namespace Syokuhi.Models
             }
         }
 
-        int? amount;
-        public int? Amount
+        double? amount;
+        public double? Amount
         {
             get { return amount; }
             set { SetProperty(ref amount, value); }

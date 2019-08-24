@@ -96,7 +96,7 @@ namespace Syokuhi.Models
             return new DataFiltableCollection(lst);
         }
 
-        public int? GetAmount(DateTime date)
+        public double? GetAmount(DateTime date)
         {
             try
             {
@@ -109,7 +109,7 @@ namespace Syokuhi.Models
             }
         }
 
-        public int? GetDefMokuhyo()
+        public double? GetDefMokuhyo()
         {
             try
             {

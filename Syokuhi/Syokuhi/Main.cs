@@ -12,11 +12,11 @@ namespace Syokuhi
     [Activity(Label = "Syokuhi", MainLauncher = true)]
     public class Main : Activity
     {
-        int defMokuhyo;
+        double defMokuhyo;
         DateTime? start;
         DataFiltableCollection items;
-        int mokuhyo = 0;
-        int total = 0;
+        double mokuhyo = 0;
+        double total = 0;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -44,7 +44,7 @@ namespace Syokuhi
 
         void display()
         {
-            defMokuhyo = (int)items.GetDefMokuhyo();
+            defMokuhyo = (double)items.GetDefMokuhyo();
 
             if (start == null)
             {
@@ -99,15 +99,15 @@ namespace Syokuhi
             }
 
             DateTime dtBefore = ((DateTime)start).AddDays(-7);
-            int iBefore = 0;
+            double iBefore = 0;
 
             for (int i = 0; i <= 6; i++)
             {
-                int? iTmp = items.GetAmount(dtBefore.AddDays(i));
+                double? iTmp = items.GetAmount(dtBefore.AddDays(i));
 
                 if (iTmp.HasValue)
                 {
-                    iBefore += (int)iTmp;
+                    iBefore += (double)iTmp;
                 }
             }
 
@@ -156,7 +156,7 @@ namespace Syokuhi
 
                 if (!sTmp.Equals(string.Empty))
                 {
-                    total += int.Parse(sTmp);
+                    total += double.Parse(sTmp);
                 }
             }
 
@@ -235,7 +235,7 @@ namespace Syokuhi
                 case 1:
                     if (resultCode == Result.Ok)
                     {
-                        defMokuhyo = data.GetIntExtra("mokuhyo", 0);
+                        defMokuhyo = data.GetDoubleExtra("mokuhyo", 0);
                         Data dt = new Data();
                         dt.Category = Data.enumCategory.setting;
                         dt.Date = new DateTime();
@@ -293,7 +293,7 @@ namespace Syokuhi
 
             if (((EditText)sender).Text != string.Empty)
             {
-                dt.Amount = int.Parse(((EditText)sender).Text);
+                dt.Amount = double.Parse(((EditText)sender).Text);
             }
 
             items.Update(dt);
